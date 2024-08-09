@@ -1,9 +1,8 @@
 ---
-name: Bug report
+name: 🐛 Bug report
 about: You might have found a bug and decide to report it
 title: ''
-labels: 'bug :bug:'
-assignees: ''
+labels: '🐛 Bug'
 ---
 
 ## Context & versions
