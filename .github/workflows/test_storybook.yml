@@ -1,0 +1,39 @@
+name: Storybook Test
+
+on:
+  push:
+    paths:
+      - govtool/frontend/**
+      - .github/workflows/test_storybook.yml
+
+defaults:
+  run:
+    working-directory: ./govtool/frontend
+
+jobs:
+  storybook:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: |
+          npm config set @intersect.mbo:registry "https://registry.npmjs.org/" --location=global
+          npm config set //registry.npmjs.org/:_authToken ${NPMRC_TOKEN} --location=global  
+          npm install
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+      - name: Build Storybook
+        run: NODE_OPTIONS="--max-old-space-size=8046" npm run build:storybook --quiet
+      - name: Serve Storybook and run tests
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "npx http-server storybook-static --port 6006 --silent" \
+            "npx wait-on tcp:6006 && npm run test:storybook"
+
+    env:
+      NODE_OPTIONS: --max_old_space_size=4096
+      NPMRC_TOKEN: ${{ secrets.NPMRC_TOKEN }}

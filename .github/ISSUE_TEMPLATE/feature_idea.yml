@@ -1,0 +1,43 @@
+name: "Feature idea :light_bulb:"
+description: Idea or request for some feature on the GovTool roadmap
+labels: [':light_bulb: Feature Idea']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Thank you for contributing to GovTool!**
+
+        Instead of opening this issue, consider [starting a new discussion](https://github.com/IntersectMBO/govtool/discussions/new?category=ideas).
+        That way, we can discuss & refine the idea together.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What?
+      description: What is this feature?
+      placeholder: |
+        For example describe a new API endpoint, a change in messaging formats,
+        a new configuration option, ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why?
+      description: Why do we need or want this feature?
+      placeholder: |
+        Give context and describe the problem, challenge or opportunity you see
+    validations:
+      required: true
+
+  - type: textarea
+    id: how
+    attributes:
+      label: How?
+      description: How does this feature solve the why? we realize this feature
+      placeholder: |
+        Which technical solutions, libraries or systems should be used, which
+        components need to change, steps how to implement this, ...
+    validations:
+      required: true
