@@ -27,6 +27,21 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domain
+      description: Which GovTool instance were you connected to?
+      options:
+        - "`sanchogov.tools`"
+        - "`dev-sanchogov.tools`"
+        - "`test-sanchogov.tools`"
+        - "`stage-sanchogov.tools`"
+        - "`preview.gov.tools`"
+        - Custom setup
+    validations:
+      required: true
+
   - type: textarea
     id: context
     attributes:
