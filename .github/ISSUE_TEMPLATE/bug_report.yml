@@ -33,22 +33,32 @@ body:
       label: Domain
       description: Which GovTool instance were you connected to?
       options:
-        - "`sanchogov.tools`"
-        - "`dev-sanchogov.tools`"
-        - "`test-sanchogov.tools`"
-        - "`stage-sanchogov.tools`"
-        - "`preview.gov.tools`"
+        - sanchogov.tools
+        - dev-sanchogov.tools
+        - test-sanchogov.tools
+        - stage-sanchogov.tools
+        - preview.gov.tools"
         - Custom setup
     validations:
       required: true
 
+  - type: input
+    id: wallet
+    attributes:
+      label: Which wallet were you using?
+      description: Please provide which wallet and version you were using
+      placeholder: |
+        Eternl wallet v1.12.6.6 
+    validations:
+      required: false
+
   - type: textarea
     id: context
     attributes:
-      label: Context?
-      description: Explain your setup and what versions have been used.
+      label: Context
+      description: Please give the context to what you were trying to achieve
       placeholder: |
-        Explain your setup and what versions have been used
+        I was trying to register as a DRep and the following happened...
     validations:
       required: true
 
@@ -58,11 +68,9 @@ body:
       label: Steps to reproduce
       description: Explain the steps to reproduce
       placeholder: |
-          1. Prepared x
-          2. Started y
-          3. Submitted z
-
-          If not reproducible, describe the steps you took as you remember it.
+          1. Connect wallet
+          2. Navigate to the dashboard
+          3. Click on "Register as DRep"
     validations:
       required: true
 
@@ -70,9 +78,9 @@ body:
     id: actual-behavior
     attributes:
       label: Actual behavior
-      description:  A description of the (reproducible) outcome.
+      description:  A description of the erroneous outcome
       placeholder: |
-        A description of the (reproducible) outcome.
+        A error came up on the screen stating...
     validations:
       required: true
 
@@ -82,6 +90,6 @@ body:
       label: Expected behavior
       description: A description of what you expect to happen instead
       placeholder: |
-        A description of what you expect to happen instead
+        The DRep registration transaction was sent and I was registered
     validations:
       required: true
