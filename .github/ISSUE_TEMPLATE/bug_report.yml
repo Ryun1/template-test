@@ -1,0 +1,72 @@
+name: 🐛 Bug report
+about: You might have found a bug
+title: '🐛 '
+projects: ["IntersectMBO/projects/30", "IntersectMBO/projects/34"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🌟 **Thank you for contributing to GovTool!**
+  - type: markdown
+    attributes:
+      value: |
+        Before submitting a new issue please [existing issues](https://github.com/IntersectMBO/govtool/issues) to avoid duplication.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: What part of GovTool does this feature affect?
+      options:
+        - Proposal Pillar
+        - Voting Pillar
+        - Delegation Pillar
+        - Wrapper
+        - Other
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context?
+      description: Explain your setup and what versions have been used.
+      placeholder: |
+        Explain your setup and what versions have been used
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Explain the steps to reproduce
+      placeholder: |
+          1. Prepared x
+          2. Started y
+          3. Submitted z
+
+          If not reproducible, describe the steps you took as you remember it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual behavior
+      description:  A description of the (reproducible) outcome.
+      placeholder: |
+        A description of the (reproducible) outcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: A description of what you expect to happen instead
+      placeholder: |
+        A description of what you expect to happen instead
+    validations:
+      required: true
