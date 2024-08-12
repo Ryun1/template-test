@@ -1,5 +1,5 @@
 name: 🐛 Bug report
-description: You might have found a bug
+description: You found a bug!
 title: '🐛 '
 projects: ["IntersectMBO/projects/30", "IntersectMBO/projects/34"]
 body:
@@ -37,7 +37,7 @@ body:
         - dev-sanchogov.tools
         - test-sanchogov.tools
         - stage-sanchogov.tools
-        - preview.gov.tools"
+        - preview.gov.tools
         - Custom setup
     validations:
       required: true
