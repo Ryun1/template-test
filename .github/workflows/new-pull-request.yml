@@ -17,6 +17,16 @@ jobs:
       uses: octokit/request-action@v2.x
       with:
         route: GET /repos/${{ github.repository }}/pulls/${{ github.event.number }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: List added files
+      id: files
+      uses: octokit/request-action@v2.x
+      with:
+        route: GET /repos/${{ github.repository }}/pulls/${{ github.event.number }}/files
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Update PR description
       run: |
@@ -33,8 +43,5 @@ jobs:
         # Update the PR description
         gh pr edit ${{ github.event.pull_request.number }} --body "${{ github.event.pull_request.body }}\n\n### Links to Added Files:\n$LINKS"
 
-    - name: List added files
-      id: files
-      uses: octokit/request-action@v2.x
-      with:
-        route: GET /repos/${{ github.repository }}/pulls/${{ github.event.number }}/files
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
