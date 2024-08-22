@@ -17,6 +17,8 @@ jobs:
 
     - name: Get the list of added files
       id: files
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         FILES=$(gh pr view ${{ github.event.pull_request.number }} --json files --jq '.files | map(select(.additions > 0)) | map(.path) | join("\n")')
         echo "files=$FILES" >> $GITHUB_ENV
