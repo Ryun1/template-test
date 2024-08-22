@@ -42,9 +42,9 @@ jobs:
 
         # Prepare the links to the added files
         LINKS=""
-        while IFS= read -r FILE; do
-          LINKS="$LINKS\n- [View file in branch](https://github.com/$REPO_NAME/blob/$BRANCH_NAME/$FILE)"
-        done < added_files.txt
+        # while IFS= read -r FILE; do
+        #   LINKS="$LINKS\n- [View file in branch](https://github.com/$REPO_NAME/blob/$BRANCH_NAME/$FILE)"
+        # done < added_files.txt
 
         # Fetch the current PR description safely using jq to escape special characters
         # CURRENT_BODY=$(echo "${{ steps.pr.outputs.data }}" | jq -r '.body')
