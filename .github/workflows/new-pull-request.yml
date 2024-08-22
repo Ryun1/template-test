@@ -15,6 +15,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
+    - name: Get the list of added files
+      id: files
+      run: |
+        FILES=$(gh pr view ${{ github.event.pull_request.number }} --json files --jq '.files | map(select(.additions > 0)) | map(.path) | join("\n")')
+        echo "files=$FILES" >> $GITHUB_ENV
+
     - name: Get the PR details
       id: pr
       uses: octokit/request-action@v2.x
@@ -23,25 +29,16 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: List added files
-      id: files
-      uses: octokit/request-action@v2.x
-      with:
-        route: GET /repos/${{ github.repository }}/pulls/${{ github.event.number }}/files
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     - name: Update PR description
       run: |
         BRANCH_NAME=${{ github.event.pull_request.head.ref }}
         REPO_NAME=${{ github.event.pull_request.head.repo.full_name }}
-        FILE_PATHS=$(jq -r '.files[] | select(.status == "added") | .filename' <<< "${{ steps.files.outputs.files }}")
 
         # Prepare the links to the added files
         LINKS=""
-        for FILE in $FILE_PATHS; do
+        while IFS= read -r FILE; do
           LINKS="$LINKS\n- [View file in branch](https://github.com/$REPO_NAME/blob/$BRANCH_NAME/$FILE)"
-        done
+        done <<< "${{ env.files }}"
 
         # Fetch the current PR description
         CURRENT_BODY=$(jq -r '.body' <<< "${{ steps.pr.outputs.data }}")
