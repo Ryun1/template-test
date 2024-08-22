@@ -47,10 +47,10 @@ jobs:
         done < added_files.txt
 
         # Fetch the current PR description safely using jq to escape special characters
-        CURRENT_BODY=$(echo "${{ steps.pr.outputs.data }}" | jq -r '.body')
+        # CURRENT_BODY=$(echo "${{ steps.pr.outputs.data }}" | jq -r '.body')
 
-        # Append the new links to the current description
-        UPDATED_BODY="$CURRENT_BODY\n\n### Links to Added Files:\n$LINKS"
+        # # Append the new links to the current description
+        # UPDATED_BODY="$CURRENT_BODY\n\n### Links to Added Files:\n$LINKS"
 
         # Safely update the PR description using GitHub REST API with jq to format the body
         # curl -X PATCH \
