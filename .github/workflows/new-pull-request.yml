@@ -32,6 +32,9 @@ jobs:
       uses: octokit/request-action@v2.x
       with:
         route: GET /repos/${{ github.repository }}/pulls/${{ github.event.number }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
     - name: Update PR description
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
