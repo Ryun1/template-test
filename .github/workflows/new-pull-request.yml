@@ -38,7 +38,7 @@ jobs:
     - name: Update PR description
       run: |
         BRANCH_NAME=${{ github.event.pull_request.head.ref }}
-        REPO_NAME=${{ github.event.pull_request.head.repo.full_name }}
+        # REPO_NAME=${{ github.event.pull_request.head.repo.full_name }}
 
         # Prepare the links to the added files
         LINKS=""
