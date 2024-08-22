@@ -37,7 +37,7 @@ jobs:
 
     - name: Update PR description
       run: |
-        BRANCH_NAME=${{ github.event.pull_request.head.ref }}
+        # BRANCH_NAME=${{ github.event.pull_request.head.ref }}
         # REPO_NAME=${{ github.event.pull_request.head.repo.full_name }}
 
         # Prepare the links to the added files
@@ -58,8 +58,6 @@ jobs:
         #   -H "Accept: application/vnd.github.v3+json" \
         #   https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }} \
         #   -d "$(jq -n --arg body "$UPDATED_BODY" '{body: $body}')"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Clean up
       run: |
