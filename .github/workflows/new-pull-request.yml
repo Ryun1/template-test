@@ -27,6 +27,40 @@ jobs:
         echo "Added files:"
         cat added_files.txt
 
+    - name: Get the PR details
+      id: pr
+      uses: octokit/request-action@v2.x
+      with:
+        route: GET /repos/${{ github.repository }}/pulls/${{ github.event.number }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Update PR description
+      run: |
+        # BRANCH_NAME=${{ github.event.pull_request.head.ref }}
+        # REPO_NAME=${{ github.event.pull_request.head.repo.full_name }}
+
+        # Prepare the links to the added files
+        # LINKS=""
+        # while IFS= read -r FILE; do
+        #   LINKS="$LINKS\n- [View file in branch](https://github.com/$REPO_NAME/blob/$BRANCH_NAME/$FILE)"
+        # done < added_files.txt
+
+        # Fetch the current PR description safely using jq to escape special characters
+        # CURRENT_BODY=$(echo "${{ steps.pr.outputs.data }}" | jq -r '.body')
+
+        # # Append the new links to the current description
+        # UPDATED_BODY="$CURRENT_BODY\n\n### Links to Added Files:\n$LINKS"
+
+        # Safely update the PR description using GitHub REST API with jq to format the body
+        # curl -X PATCH \
+        #   -H "Authorization: token $GITHUB_TOKEN" \
+        #   -H "Accept: application/vnd.github.v3+json" \
+        #   https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }} \
+        #   -d "$(jq -n --arg body "$UPDATED_BODY" '{body: $body}')"
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Clean up
       run: |
         rm -f added_files.txt
