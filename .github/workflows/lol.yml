@@ -5,21 +5,12 @@ on:
     types: [opened]
 
 jobs:
-  add-to-projects:
+  # https://github.com/actions/add-to-project
+  add-to-project:
+    name: Add issue and bugs to project
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Install GitHub CLI
-        run: sudo apt-get install gh
-
-      - name: Add issue to GovTool Project
-        run: gh project item-add 1 --url "${{ github.event.issue.html_url }}" --owner Ryun1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    #   - name: Add issue to Community Backlog Project
-    #     run: gh project item-add 34 --url "${{ github.event.issue.html_url }}" --owner IntersectMBO
-    #     env:
-    #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/add-to-project@v0.5.0
+        with:
+          project-url: https://github.com/users/Ryun1/projects/1
+          github-token: ${{ github.token }}
