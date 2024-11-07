@@ -15,11 +15,11 @@ jobs:
         run: sudo apt-get install gh
 
       - name: Add issue to GovTool Project
-        run: gh project item-add 30 --url "${{ github.event.issue.html_url }}"
+        run: gh project item-add 30 --url "${{ github.event.issue.html_url }}" --owner IntersectMBO
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Add issue to Community Backlog Project
-        run: gh project item-add 34 --url "${{ github.event.issue.html_url }}"
+        run: gh project item-add 34 --url "${{ github.event.issue.html_url }}" --owner IntersectMBO
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
