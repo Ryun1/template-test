@@ -9,7 +9,7 @@ jobs:
     name: Add issue to project
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/add-to-project@RELEASE_VERSION
+      - uses: actions/add-to-project@1.0.2
         with:
           project-url: https://github.com/users/Ryun1/projects/1
           github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
