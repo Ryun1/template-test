@@ -5,12 +5,11 @@ on:
     types: [opened]
 
 jobs:
-  # https://github.com/actions/add-to-project
   add-to-project:
-    name: Add issue and bugs to project
+    name: Add issue to project
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/add-to-project@v0.5.0
+      - uses: actions/add-to-project@RELEASE_VERSION
         with:
           project-url: https://github.com/users/Ryun1/projects/1
-          github-token: ${{ github.token }}
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
