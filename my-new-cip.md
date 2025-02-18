@@ -1,6 +1,3 @@
-## Github action testing repo
-
-
 ---
 CIP: ?
 Title: ?
@@ -14,3 +11,5 @@ Discussions:
 Created: YYYY-MM-DD
 License: CC-BY-4.0
 ---
+
+# my cip
