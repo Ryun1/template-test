@@ -2,7 +2,6 @@
 CPS: ?
 Title: ?
 Status: Open
-Category: ?
 Authors:
     - John Doe <john.doe@email.domain>
     - John Doe <john.doe@email.domain>
