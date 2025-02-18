@@ -20,5 +20,5 @@ jobs:
           echo "FILES=$(git diff --name-only HEAD^ HEAD -- '*.md' | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_ENV
 
       - name: Run Markdown Header Validation Script
-        run: python3 scripts/validate_markdown_header.py
+        run: python3 .github/scripts/validate_markdown_header.py
         shell: bash
