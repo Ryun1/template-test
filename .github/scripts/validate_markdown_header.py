@@ -25,9 +25,13 @@ def validate_header(content):
     header_text = match.group(1).strip()
     fields = extract_fields(header_text)
     
-    if fields == REQUIRED_FIELDS_CPS or fields == REQUIRED_FIELDS_CIP:
-        return True, "Valid header"
-    return False, "Header fields are missing or out of order"
+    if fields == REQUIRED_FIELDS_CPS:
+        return True, "Valid CPS header"
+    elif fields == REQUIRED_FIELDS_CIP:
+        return True, "Valid CIP header"
+    else:
+        missing_fields = set(REQUIRED_FIELDS_CPS) - set(fields) if "CPS" in fields else set(REQUIRED_FIELDS_CIP) - set(fields)
+        return False, f"Header fields are missing or out of order: {', '.join(missing_fields)}"
 
 def main():
     failed_files = []
