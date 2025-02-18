@@ -18,7 +18,7 @@ jobs:
       - name: Get changed markdown files
         id: changed-files
         run: |
-          echo "FILES=$(git diff --name-only HEAD^ HEAD -- '**/*[Cc][Ii][Pp]*/README.md' '**/*[Cc][Pp][Ss]*/README.md' | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_ENV
+          echo "FILES=$(git diff --name-only HEAD^ HEAD -- '*[Cc][Pp][Ss]*/README.md' | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_ENV
 
       - name: Run Markdown Header Validation Script
         run: python3 .github/scripts/validate_markdown_header.py
