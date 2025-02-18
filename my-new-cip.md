@@ -1,10 +1,11 @@
 ---
-CIP: ?
+CPS: ?
 Title: ?
+Status: Open
 Category: ?
 Authors:
     - John Doe <john.doe@email.domain>
-Implementors: []
+Proposed Solutions: []
 Discussions:
     - https://github.com/cardano-foundation/CIPs/pull/?
 Created: YYYY-MM-DD
