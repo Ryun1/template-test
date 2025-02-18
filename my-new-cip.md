@@ -5,6 +5,7 @@ Status: Open
 Category: ?
 Authors:
     - John Doe <john.doe@email.domain>
+    - John Doe <john.doe@email.domain>
 Proposed Solutions: []
 Discussions:
     - https://github.com/cardano-foundation/CIPs/pull/?
