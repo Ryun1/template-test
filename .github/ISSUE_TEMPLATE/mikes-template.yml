@@ -6,12 +6,12 @@ body:
   - type: markdown
     attributes:
       value: |
-        ### :rocket: Thank you for suggesting a new feature!
+        ### 🚀 Thank you for suggesting a new feature!
         Please fill out the following details to help us evaluate your request effectively.
   - type: textarea
     id: problem-statement
     attributes:
-      label: ":face_with_monocle: Problem Statement"
+      label: "🧐 Problem Statement"
       description: "What problem are you trying to solve? Please describe the user need or pain point."
       placeholder: "Example: Users struggle to find X functionality, leading to frustration and drop-off..."
     validations:
@@ -27,7 +27,7 @@ body:
   - type: textarea
     id: user-impact
     attributes:
-      label: ":silhouettes: Who is Impacted?"
+      label: "👥 Who is Impacted?"
       description: "Which users or personas will benefit from this feature? How does it improve their experience?"
       placeholder: "Example: This feature will help first-time users onboard faster..."
     validations:
@@ -35,7 +35,7 @@ body:
   - type: textarea
     id: dependencies
     attributes:
-      label: ":link: Dependencies & Risks"
+      label: "🔗 Dependencies & Risks"
       description: "Does this feature affect existing workflows, integrations, or technical constraints?"
       placeholder: "Example: This feature depends on the authentication system update..."
     validations:
@@ -43,7 +43,7 @@ body:
   - type: textarea
     id: supporting-evidence
     attributes:
-      label: ":bar_chart: Supporting Evidence (if any)"
+      label: "📊 Supporting Evidence (if any)"
       description: "Do you have any data, analytics, or user feedback supporting this request?"
       placeholder: "Example: 70% of surveyed users mentioned difficulty finding this feature..."
     validations:
@@ -51,7 +51,7 @@ body:
   - type: dropdown
     id: priority
     attributes:
-      label: ":zap: Priority Level"
+      label: "⚡️ Priority Level"
       description: "How critical is this feature?"
       options:
         - "Low (Nice to Have)"
@@ -62,7 +62,7 @@ body:
   - type: checkboxes
     id: acknowledgments
     attributes:
-      label: ":white_tick: Acknowledgments"
+      label: "☑️ Acknowledgments"
       description: "Please confirm you've reviewed our process before submitting."
       options:
         - label: "I have searched existing issues to avoid duplication."
