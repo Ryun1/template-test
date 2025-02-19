@@ -1,9 +1,10 @@
-name: Validate Markdown Header
+name: Validate CIP or CPS Header
 
 on:
   pull_request:
     paths:
-      - '**.md'
+      - '**/*[Cc][Ii][Pp]*/README.md'
+      - '**/*[Cc][Pp][Ss]*/README.md'
 
 jobs:
   check-markdown-header:
@@ -17,7 +18,7 @@ jobs:
       - name: Get changed markdown files
         id: changed-files
         run: |
-          echo "FILES=$(git diff --name-only HEAD^ HEAD -- '*.md' | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_ENV
+          echo "FILES=$(git diff --name-only HEAD^ HEAD -- '*README.md' | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_ENV
 
       - name: Run Markdown Header Validation Script
         run: python3 .github/scripts/validate_markdown_header.py

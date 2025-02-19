@@ -8,18 +8,30 @@ REQUIRED_FIELDS_CIP = ["CIP", "Title", "Category", "Status", "Authors", "Impleme
 
 HEADER_PATTERN = re.compile(r"---(.*?)---", re.DOTALL)
 
+def extract_fields(header_text):
+    fields = []
+    for line in header_text.split("\n"):
+        line = line.strip()
+        if line and not line.startswith("-"):
+            key = line.split(":")[0].strip()
+            fields.append(key)
+    return fields
+
 def validate_header(content):
     match = HEADER_PATTERN.search(content)
     if not match:
         return False, "No valid header found"
     
     header_text = match.group(1).strip()
-    lines = [line.strip() for line in header_text.split("\n") if line.strip()]
-    fields = [line.split(":")[0] for line in lines if ":" in line]
+    fields = extract_fields(header_text)
     
-    if fields == REQUIRED_FIELDS_CPS or fields == REQUIRED_FIELDS_CIP:
-        return True, "Valid header"
-    return False, "Header fields are missing or out of order"
+    if fields == REQUIRED_FIELDS_CPS:
+        return True, "Valid CPS header"
+    elif fields == REQUIRED_FIELDS_CIP:
+        return True, "Valid CIP header"
+    else:
+        missing_fields = set(REQUIRED_FIELDS_CPS) - set(fields) if "CPS" in fields else set(REQUIRED_FIELDS_CIP) - set(fields)
+        return False, f"Header fields are missing or out of order: {', '.join(missing_fields)}"
 
 def main():
     failed_files = []
