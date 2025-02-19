@@ -1,0 +1,71 @@
+name: Feature Request
+description: Suggest a new feature or enhancement for the project.
+title: "[Feature Request]: <Brief Feature Name>"
+labels: ["Feature Request", "Needs UX Review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### :rocket: Thank you for suggesting a new feature!
+        Please fill out the following details to help us evaluate your request effectively.
+  - type: textarea
+    id: problem-statement
+    attributes:
+      label: ":face_with_monocle: Problem Statement"
+      description: "What problem are you trying to solve? Please describe the user need or pain point."
+      placeholder: "Example: Users struggle to find X functionality, leading to frustration and drop-off..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: ":bulb: Proposed Solution"
+      description: "Describe your proposed solution. If possible, include sketches, wireframes, or references."
+      placeholder: "Example: A new button on the dashboard that allows users to..."
+    validations:
+      required: true
+  - type: textarea
+    id: user-impact
+    attributes:
+      label: ":silhouettes: Who is Impacted?"
+      description: "Which users or personas will benefit from this feature? How does it improve their experience?"
+      placeholder: "Example: This feature will help first-time users onboard faster..."
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: ":link: Dependencies & Risks"
+      description: "Does this feature affect existing workflows, integrations, or technical constraints?"
+      placeholder: "Example: This feature depends on the authentication system update..."
+    validations:
+      required: false
+  - type: textarea
+    id: supporting-evidence
+    attributes:
+      label: ":bar_chart: Supporting Evidence (if any)"
+      description: "Do you have any data, analytics, or user feedback supporting this request?"
+      placeholder: "Example: 70% of surveyed users mentioned difficulty finding this feature..."
+    validations:
+      required: false
+  - type: dropdown
+    id: priority
+    attributes:
+      label: ":zap: Priority Level"
+      description: "How critical is this feature?"
+      options:
+        - "Low (Nice to Have)"
+        - "Medium (Improves UX)"
+        - "High (Critical to Users)"
+    validations:
+      required: true
+  - type: checkboxes
+    id: acknowledgments
+    attributes:
+      label: ":white_tick: Acknowledgments"
+      description: "Please confirm you've reviewed our process before submitting."
+      options:
+        - label: "I have searched existing issues to avoid duplication."
+          required: true
+        - label: "I understand that this request will be evaluated and may not be implemented."
+          required: true
