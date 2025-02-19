@@ -1,6 +1,6 @@
-name: Feature Request
+name: Mikes Feature Request
 description: Suggest a new feature or enhancement for the project.
-title: "[Feature Request]: <Brief Feature Name>"
+title: "Mikes [Feature Request]: <Brief Feature Name>"
 labels: ["Feature Request", "Needs UX Review"]
 body:
   - type: markdown
