@@ -19,7 +19,7 @@ body:
   - type: textarea
     id: proposed-solution
     attributes:
-      label: ":bulb: Proposed Solution"
+      label: "💡 Proposed Solution"
       description: "Describe your proposed solution. If possible, include sketches, wireframes, or references."
       placeholder: "Example: A new button on the dashboard that allows users to..."
     validations:
