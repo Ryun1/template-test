@@ -17,7 +17,7 @@ body:
   - type: textarea
     id: user-impact
     attributes:
-      label: "💡 Who is helped?"
+      label: "Who is does this help?"
       description: "Which users will benefit from this feature? How does it improve their experience?"
       placeholder: "Example: This feature will help first-time users onboard faster..."
     validations:
@@ -25,7 +25,7 @@ body:
   - type: textarea
     id: dependencies
     attributes:
-      label: "🔗 Dependencies & Risks"
+      label: "How should we do this?"
       description: "Does this feature affect existing workflows, integrations, or technical constraints?"
       placeholder: "Example: This feature depends on the authentication system update..."
     validations:
