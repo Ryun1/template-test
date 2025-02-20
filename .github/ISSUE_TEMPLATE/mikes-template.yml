@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ### 🚀 Thank you for suggesting a new feature!
+        ### 🚀 Suggest a new feature!
         Please fill out the following details to help us evaluate your request effectively.
   - type: textarea
     id: problem-statement
