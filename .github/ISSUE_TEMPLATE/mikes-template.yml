@@ -4,7 +4,7 @@ labels: ["Feature Request", "Needs UX Review"]
 body:
 - type: markdown
     attributes:
-      value: |
+      value: 
         ### 🌟 **Please contribute your idea to GovTool**
   - type: markdown
     attributes:
