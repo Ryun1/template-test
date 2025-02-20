@@ -9,7 +9,7 @@ body:
   - type: textarea
     id: problem-statement
     attributes:
-      label: "💡 Feature Idea"
+      label: "💡 Suggestion or feature"
       description: "Please describe the user need, idea, or pain point."
       placeholder: "Example: Users struggle to find X functionality, leading to frustration and drop-off..."
     validations:
@@ -17,8 +17,8 @@ body:
   - type: textarea
     id: user-impact
     attributes:
-      label: "👥 Who is Impacted?"
-      description: "Which users or personas will benefit from this feature? How does it improve their experience?"
+      label: "💡 Who is helped?"
+      description: "Which users will benefit from this feature? How does it improve their experience?"
       placeholder: "Example: This feature will help first-time users onboard faster..."
     validations:
       required: true
@@ -33,7 +33,7 @@ body:
   - type: textarea
     id: supporting-evidence
     attributes:
-      label: "📊 Supporting Evidence (if any)"
+      label: "How can we implement this?"
       description: "Do you have any data, analytics, or user feedback supporting this request?"
       placeholder: "Example: 70% of surveyed users mentioned difficulty finding this feature..."
     validations:
