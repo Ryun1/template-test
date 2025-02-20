@@ -18,7 +18,7 @@ body:
     id: proposed-solution
     attributes:
       label: "💡 Why is it needed?"
-     description: "How would your new feature make things better?"
+      description: "How would your new feature make things better?"
       placeholder: "Example: Users struggle to find X functionality, leading to frustration and drop-off..."
   validations:
       required: true
