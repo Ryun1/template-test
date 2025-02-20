@@ -30,14 +30,6 @@ body:
       placeholder: "Example: This feature depends on the authentication system update..."
     validations:
       required: false
-  - type: textarea
-    id: supporting-evidence
-    attributes:
-      label: "How can we implement this?"
-      description: "Do you have any data, analytics, or user feedback supporting this request?"
-      placeholder: "Example: 70% of surveyed users mentioned difficulty finding this feature..."
-    validations:
-      required: false
   - type: dropdown
     id: priority
     attributes:
