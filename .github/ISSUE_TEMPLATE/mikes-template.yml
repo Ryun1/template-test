@@ -9,18 +9,18 @@ body:
   - type: textarea
     id: problem-statement
     attributes:
-      label: "🧐 Problem Statement"
-      description: "What problem are you trying to solve? Please describe the user need or pain point."
+      label: "💡 Feature Idea"
+      description: "Please describe the user need, idea, or pain point."
       placeholder: "Example: Users struggle to find X functionality, leading to frustration and drop-off..."
     validations:
       required: true
   - type: textarea
     id: proposed-solution
     attributes:
-      label: "💡 Proposed Solution"
-      description: "Describe your proposed solution. If possible, include sketches, wireframes, or references."
-      placeholder: "Example: A new button on the dashboard that allows users to..."
-    validations:
+      label: "💡 Why is it needed?"
+     description: "How would your new feature make things better?"
+      placeholder: "Example: Users struggle to find X functionality, leading to frustration and drop-off..."
+  validations:
       required: true
   - type: textarea
     id: user-impact
