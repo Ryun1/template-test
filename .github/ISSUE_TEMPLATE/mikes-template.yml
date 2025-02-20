@@ -4,10 +4,6 @@ labels: ["Feature Request", "Needs UX Review"]
 body:
   - type: markdown
     attributes:
-      value: 
-        ## 🌟 **Please contribute your idea to GovTool**
-  - type: markdown
-    attributes:
       value:
         Please fill out the following details.
   - type: textarea
