@@ -1,6 +1,5 @@
 name: Feature Suggestion
 description: Suggest a new feature or enhancement for GovTool.
-title: "Title of new feature"
 labels: ["Feature Request", "Needs UX Review"]
 body:
   - type: markdown
