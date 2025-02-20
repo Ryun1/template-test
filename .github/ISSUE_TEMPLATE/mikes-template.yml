@@ -2,10 +2,10 @@ name: Feature Suggestion
 description: Suggest a new feature or enhancement for GovTool.
 labels: ["Feature Request", "Needs UX Review"]
 body:
-- type: markdown
+  - type: markdown
     attributes:
       value: 
-        ### 🌟 **Please contribute your idea to GovTool**
+        ## 🌟 **Please contribute your idea to GovTool**
   - type: markdown
     attributes:
       value:
