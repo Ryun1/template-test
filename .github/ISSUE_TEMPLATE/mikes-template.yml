@@ -35,6 +35,6 @@ body:
     attributes:
       label: "Anything else you might want to add?"
       description: "Free text box for any comments"
-      placeholder: "I love GovTool, and so does my dog"
+      placeholder: "I love GovTool, and so does my dog!"
     validations:
       required: false
