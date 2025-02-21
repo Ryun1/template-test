@@ -30,13 +30,3 @@ body:
       placeholder: "Example: Add a button that says GO to the home page"
     validations:
       required: false
-  - type: checkboxes
-    id: acknowledgments
-    attributes:
-      label: "☑️ Acknowledgments"
-      description: "Please confirm you've reviewed our process before submitting."
-      options:
-        - label: "I have searched existing issues to avoid duplication."
-          required: true
-        - label: "I understand that this request will be evaluated and may not be implemented."
-          required: true
