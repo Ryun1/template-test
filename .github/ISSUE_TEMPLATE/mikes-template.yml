@@ -11,13 +11,13 @@ body:
     attributes:
       label: "💡 Suggestion or feature"
       description: "Please describe the user need, idea, or pain point."
-      placeholder: "Example: Users struggle to find X functionality, leading to frustration and drop-off..."
+      placeholder: "Example: Users would benefit from having X functionality, so they can do Y..."
     validations:
       required: true
   - type: textarea
     id: user-impact
     attributes:
-      label: "Who is does this help?"
+      label: "Who does this help?"
       description: "Which users will benefit from this feature? How does it improve their experience?"
       placeholder: "Example: This feature will help first-time users onboard faster..."
     validations:
