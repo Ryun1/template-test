@@ -25,8 +25,8 @@ body:
   - type: textarea
     id: dependencies
     attributes:
-      label: "How should we do this?"
-      description: "Suggestions on implementation, or technical issues/ideas?"
+      label: "How might we do this?"
+      description: "Suggestions on implementation"
       placeholder: "Example: Add a button that says GO to the home page"
     validations:
       required: false
