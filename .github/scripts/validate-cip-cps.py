@@ -223,9 +223,16 @@ def validate_sections(content: str, doc_type: str) -> List[str]:
 def determine_doc_type(file_path: Path) -> Optional[str]:
     """Determine document type (CIP or CPS) from file path."""
     path_str = str(file_path)
-    if '/CIP-' in path_str:
+    # Normalize path separators and check for CIP- or CPS- patterns
+    # Handles both absolute (/CIP-123/) and relative (CIP-123/) paths
+    # Also handles Windows paths (CIP-123\README.md)
+    normalized_path = path_str.replace('\\', '/')
+    
+    # Check for CIP- pattern (with or without leading slash)
+    if re.search(r'(^|/)CIP-', normalized_path, re.IGNORECASE):
         return 'CIP'
-    elif '/CPS-' in path_str:
+    # Check for CPS- pattern (with or without leading slash)
+    elif re.search(r'(^|/)CPS-', normalized_path, re.IGNORECASE):
         return 'CPS'
     return None
 

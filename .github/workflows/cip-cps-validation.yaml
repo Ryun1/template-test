@@ -56,5 +56,5 @@ jobs:
           
           echo "Validating files: $FILES"
           # Run validation script on each file
-          python3 .github/workflows/scripts/validate-cip-cps.py $FILES
+          python3 .github/scripts/validate-cip-cps.py $FILES
 
